@@ -81,11 +81,11 @@ public class ClubSimulation {
 		pauseB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// THIS DOES NOTHING - MUST BE FIXED
-				for(Clubgoer clubbers : patrons){
+				for (Clubgoer clubbers : patrons) {
 					clubbers.pauseFlag.set(!clubbers.pauseFlag.get());
-					if(!clubbers.pauseFlag.get()){
-						synchronized (clubbers){
-							clubbers.notify();//Notify thread to resume.
+					if (!clubbers.pauseFlag.get()) {
+						synchronized (clubbers) {
+							clubbers.notify();// Notify thread to resume.
 						}
 					}
 				}
