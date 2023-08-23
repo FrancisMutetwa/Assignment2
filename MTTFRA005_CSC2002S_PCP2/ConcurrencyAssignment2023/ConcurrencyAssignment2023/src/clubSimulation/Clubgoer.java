@@ -16,7 +16,7 @@ public class Clubgoer extends Thread {
 	GridBlock currentBlock;
 	private Random rand;
 	private int movingSpeed;
-	
+
 	private PeopleLocation myLocation;
 	private boolean inRoom;
 	private boolean thirsty;
@@ -52,13 +52,18 @@ public class Clubgoer extends Thread {
 	//setter
 
 	//check to see if user pressed pause button
-	private void checkPause() {
-		// THIS DOES NOTHING - MUST BE FIXED  	
+	private synchronized void checkPause() throws InterruptedException {
+		// THIS DOES NOTHING - MUST BE FIXED 
+		while(pauseFlag.get()){
+			wait(); //thread it keeps on running until flag is set to true
+		} 	
         
     }
-	private void startSim() {
+	private synchronized void startSim() throws InterruptedException {
 		// THIS DOES NOTHING - MUST BE FIXED  	
-        
+        while(!startFlag.get()){
+			wait(); //thread it waits for a long time, waiting for boolean to evaluate
+		}
     }
 	
 	//get drink at bar
