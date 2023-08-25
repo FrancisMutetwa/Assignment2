@@ -22,6 +22,8 @@ public class ClubSimulation {
 	static int gridY = 10; // number of y grids in club - default value if not provided on command line
 	static int max = 5; // max number of customers - default value if not provided on command line
 
+
+	
 	static Clubgoer[] patrons; // array for customer threads
 	static PeopleLocation[] peopleLocations; // array to keep track of where customers are
 
@@ -33,6 +35,7 @@ public class ClubSimulation {
 
 	private static int maxWait = 1200; // for the slowest customer
 	private static int minWait = 500; // for the fastest cutomer
+
 
 	public static void setupGUI(int frameX, int frameY, int[] exits) {
 		// Frame initialize and dimensions
@@ -71,6 +74,14 @@ public class ClubSimulation {
 		startB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// THIS DOES NOTHING - MUST BE FIXED
+			for (Clubgoer clubbers : patrons) {
+					clubbers.startFlag.set(true);
+					if (clubbers.startFlag.get()) {
+						synchronized (clubbers) {
+							clubbers.notifyAll();// Notify thread to start.
+						}
+					}
+			}
 			}
 		});
 
@@ -82,10 +93,11 @@ public class ClubSimulation {
 			public void actionPerformed(ActionEvent e) {
 				// THIS DOES NOTHING - MUST BE FIXED
 				for (Clubgoer clubbers : patrons) {
-					clubbers.pauseFlag.set(!clubbers.pauseFlag.get());
-					if (!clubbers.pauseFlag.get()) {
+					//clubbers.pauseFlag.set(!clubbers.pauseFlag.get())
+					clubbers.pauseFlag.set(true);
+					if (clubbers.pauseFlag.get()) {
 						synchronized (clubbers) {
-							clubbers.notify();// Notify thread to resume.
+							clubbers.notifyAll();// Notify thread to resume.
 						}
 					}
 				}
