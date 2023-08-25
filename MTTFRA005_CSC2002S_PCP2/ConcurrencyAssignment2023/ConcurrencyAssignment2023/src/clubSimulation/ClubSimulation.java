@@ -14,13 +14,13 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ClubSimulation {
-	static int noClubgoers = 20;
+	//static int noClubgoers = 20;
 	static int frameX = 400;
 	static int frameY = 500;
 	static int yLimit = 400;
-	static int gridX = 10; // number of x grids in club - default value if not provided on command line
-	static int gridY = 10; // number of y grids in club - default value if not provided on command line
-	static int max = 5; // max number of customers - default value if not provided on command line
+	//static int gridX = 10; // number of x grids in club - default value if not provided on command line
+	//static int gridY = 10; // number of y grids in club - default value if not provided on command line
+	//static int max = 5; // max number of customers - default value if not provided on command line
 
 
 	
@@ -87,15 +87,17 @@ public class ClubSimulation {
 
 		final JButton pauseB = new JButton("Pause ");
 		;
-
+ 
 		// add the listener to the jbutton to handle the "pressed" event
 		pauseB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// THIS DOES NOTHING - MUST BE FIXED
+
+				boolean value = Clubgoer.pauseFlag.get();
+				
 				for (Clubgoer clubbers : patrons) {
-					//clubbers.pauseFlag.set(!clubbers.pauseFlag.get())
-					clubbers.pauseFlag.set(true);
-					if (clubbers.pauseFlag.get()) {
+					clubbers.pauseFlag.set(!value);
+					if (!clubbers.pauseFlag.get()) {
 						synchronized (clubbers) {
 							clubbers.notifyAll();// Notify thread to resume.
 						}
@@ -127,13 +129,15 @@ public class ClubSimulation {
 	public static void main(String[] args) throws InterruptedException {
 
 		// deal with command line arguments if provided
-		if (args.length == 4) {
-			noClubgoers = Integer.parseInt(args[0]); // total people to enter room
-			gridX = Integer.parseInt(args[1]); // No. of X grid cells
-			gridY = Integer.parseInt(args[2]); // No. of Y grid cells
-			max = Integer.parseInt(args[3]); // max people allowed in club
+		if (args.length != 4) {
+			System.out.println("Incorrect number of command line arguemnts provided");
+			System.exit(0);
 		}
 
+		int noClubgoers = Integer.parseInt(args[0]); // total people to enter room
+		int gridX = Integer.parseInt(args[1]); // No. of X grid cells
+		int gridY = Integer.parseInt(args[2]); // No. of Y grid cells
+		int max = Integer.parseInt(args[3]); // max people allowed in club
 		// hardcoded exit doors
 		int[] exit = { 0, (int) gridY / 2 - 1 }; // once-cell wide door on left
 
