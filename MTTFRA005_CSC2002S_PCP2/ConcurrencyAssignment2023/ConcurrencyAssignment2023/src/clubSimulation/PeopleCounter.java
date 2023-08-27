@@ -41,8 +41,15 @@ public class PeopleCounter {
 	
 	//someone got inside
 	synchronized public void personEntered() {
+		//peopleOutSide.getAndDecrement();
+		//peopleInside.getAndIncrement();
+		//if (overCapacity()==true){
+			
+		//}
+		//else{
 		peopleOutSide.getAndDecrement();
 		peopleInside.getAndIncrement();
+		//}
 	}
 
 	//someone left

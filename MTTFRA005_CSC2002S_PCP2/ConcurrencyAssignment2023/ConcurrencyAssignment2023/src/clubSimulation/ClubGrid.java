@@ -70,17 +70,29 @@ public class ClubGrid {
 		return true;
 	}
 	
-	public GridBlock enterClub(PeopleLocation myLocation) throws InterruptedException  {
+	public synchronized GridBlock  enterClub(PeopleLocation myLocation) throws InterruptedException  {
+		//Patrons waiting to see if the club limit is reached or the entrance door is occupied.
+		//Maximum number of patrons inside the club should not be exceeded the maximum.
 		counter.personArrived(); //add to counter of people waiting 
+		if (counter.overCapacity() == false)
+		{
+		//counter.personArrived(); //add to counter of people waiting 
 		entrance.get(myLocation.getID());
 		counter.personEntered(); //add to counter
 		myLocation.setLocation(entrance);
 		myLocation.setInRoom(true);
+		}
+		else{
+			wait();
+		
+			//counter.personArrived(); //add to counter of people waiting 
+			myLocation.setInRoom(false);
+		}
 		return entrance;
 	}
 	
-	
-	public GridBlock move(GridBlock currentBlock,int step_x, int step_y,PeopleLocation myLocation) throws InterruptedException {  //try to move in 
+	//Added synchronized keyword to ensure liveness and to ensure Patrons move block by block.
+	public synchronized GridBlock move(GridBlock currentBlock,int step_x, int step_y,PeopleLocation myLocation) throws InterruptedException {  //try to move in 
 		
 		int c_x= currentBlock.getX();
 		int c_y= currentBlock.getY();
@@ -107,14 +119,14 @@ public class ClubGrid {
 	} 
 	
 
-	public  void leaveClub(GridBlock currentBlock,PeopleLocation myLocation)   {
+	public  synchronized void  leaveClub(GridBlock currentBlock,PeopleLocation myLocation)   {
 			currentBlock.release();
 			counter.personLeft(); //add to counter
 			myLocation.setInRoom(false);
 			entrance.notifyAll();
 	}
 
-	public GridBlock getExit() {
+	public synchronized GridBlock getExit() {
 		return exit;
 	}
 
