@@ -97,11 +97,11 @@ public class ClubSimulation {
 				
 				for (Clubgoer clubbers : patrons) {
 					clubbers.pauseFlag.set(!value);
-					if (!clubbers.pauseFlag.get()) {
-						synchronized (clubbers) {
+					synchronized (clubbers){
+					if (!clubbers.pauseFlag.get()) { 
 							clubbers.notifyAll();// Notify thread to resume.
-						}
 					}
+				}
 				}
 			}
 		});
