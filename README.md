@@ -1,6 +1,7 @@
 # Program Name -\ConcurrencyAssignment2023
 
-Welcome to the Parallelization Algorithm Implementation! This program demonstrates how to run the Parallelization Algorithm.
+Welcome to the MULTITHREADED CONCURRENT CLUB SIMULATION! This program demonstrates how to utilize synchronization mechanisms to
+ensure that the simulation adheres to specified synchronization constraints and maintains safety and liveness.
 
 ## Prerequisites
 Before you begin, make sure you have the following installed on your system:
@@ -10,8 +11,7 @@ Before you begin, make sure you have the following installed on your system:
 ## Installation
 1. **Clone the repository** (Skip this step if you prefer to download the code manually):
    ```bash
-   git clone https://github.com/FrancisMutetwa/CSCPCP1/blob/9478b19de7f678a62c30e6f651e3b9ba1903e5c9/MTTFRA005_CSC2002S_PCP1.zip
-   cd quicksort-algorithm
+   
    ```
 
 2. **Manual Download**:
@@ -23,18 +23,18 @@ Before you begin, make sure you have the following installed on your system:
 
 2. Navigate to the directory containing the program files:
    ```bash
-   cd MTTFRA005_CSC2002S_PCP1/ParallelAssignment2023
+   cd MTTFRA005_CSC2002S_PCP1/ConcurrencyAssignment2023/ConcurrencyAssignment2023 
    ```
 
 3. Run the program using Python:
    ```bash
-   make run
+   make run ARGS="arg1 arg2 arg3 arg4"
    ```
 
 4. You can open up the make file too inorder to specify the arguments that you want to enter.
 
 5. The program will execute the arguments entered in the makefile when you run make run
-
+6. Please note that i have modified the program such that it will only run when it is given commandline arguments as what we did in Assignment1
 
 ## License
 This project is licensed under the [UCT](LICENSE).
