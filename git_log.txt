@@ -1,0 +1,77 @@
+commit 8f5d977eec518277827c7802bba2b91835a733e0
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Mon Aug 28 19:11:49 2023 +0200
+
+    final changes
+
+commit 3de0392eab78000d7ae0c69f46236ed794f6053c
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Mon Aug 28 19:10:39 2023 +0200
+
+    final changes
+
+commit 952d3bb4d82a465f7d246088eb124b8644be5e3f
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Mon Aug 28 12:04:18 2023 +0200
+
+    finished debugging the maximum number of clubbers in the club
+
+commit 481c3deefeb88183acdece17a6c0d55e300e32f7
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Sun Aug 27 14:13:37 2023 +0200
+
+    entrance and exit doors accessed one at a time
+
+commit 30cf3e5ff02c5b08bbb82bb222bd05fee75d162f
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Sun Aug 27 13:58:29 2023 +0200
+
+    managed to make the maximum number of patrons that can be allowed in the club be equal to the max
+
+commit 3ab7669fb693b249a619ab33d9868451804de6b5
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Fri Aug 25 16:26:59 2023 +0200
+
+    managed to make changes to the make file and i fixed the pause button to pause and resume the simulation
+
+commit 92522dec377eb24d90254ae8487930c77694f213
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Fri Aug 25 12:22:25 2023 +0200
+
+    made some changes to the start buttons, they now work but i think there is some deadlock happening
+
+commit da67f0f4b35c1ad7be6301d4bfb32ba6f5265584
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Wed Aug 23 21:53:17 2023 +0200
+
+    4th commit
+
+commit b9f7e7a4bca20505aa5f9455f0d4057af49030fe
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Wed Aug 23 21:44:53 2023 +0200
+
+    3rd Commit
+
+commit 8623cc8830e94d02caabae4e170161d5ea128f93
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Wed Aug 23 21:09:51 2023 +0200
+
+    3rd commit
+
+commit 8bfdc0dd434030c53781a32667f5f1b7947560b2
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Wed Aug 23 13:20:45 2023 +0200
+
+    2nd commit
+
+commit 57e8dc09b3b850f10746e868b280943a0fdd1810
+Author: FrancisMutetwa <73192665+FrancisMutetwa@users.noreply.github.com>
+Date:   Sun Aug 20 21:11:19 2023 +0200
+
+    Create README.md
+
+commit 7c9ed228a1fb7cb59c434c5e0da02c00ae40c98e
+Author: Francis Mutetwa <francismutetwa@outlook.com>
+Date:   Sun Aug 20 20:41:29 2023 +0200
+
+    first commit
