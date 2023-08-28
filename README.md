@@ -34,7 +34,7 @@ Before you begin, make sure you have the following installed on your system:
 4. You can open up the make file too inorder to specify the arguments that you want to enter.
 
 5. The program will execute the arguments entered in the makefile when you run make run
-6. Please note that i have modified the program such that it will only run when it is given commandline arguments as what we did in Assignment1
+6. Please note that i have modified the program such that it will only run when it is given command line arguments as what we did in Assignment1
 
 ## License
 This project is licensed under the [UCT](LICENSE).
