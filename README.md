@@ -11,7 +11,7 @@ Before you begin, make sure you have the following installed on your system:
 ## Installation
 1. **Clone the repository** (Skip this step if you prefer to download the code manually):
    ```bash
-   
+   https://github.com/FrancisMutetwa/Assignment2/tree/2aaef03a34fb11432ef70db6fe951e8f2e78de1b
    ```
 
 2. **Manual Download**:
@@ -26,7 +26,7 @@ Before you begin, make sure you have the following installed on your system:
    cd MTTFRA005_CSC2002S_PCP1/ConcurrencyAssignment2023/ConcurrencyAssignment2023 
    ```
 
-3. Run the program using Python:
+3. Run the program using java:
    ```bash
    make run ARGS="arg1 arg2 arg3 arg4"
    ```
