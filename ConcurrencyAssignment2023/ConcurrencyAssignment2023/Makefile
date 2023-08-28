@@ -10,7 +10,7 @@ $(PACKAGE): $(SRC_DIR)/$(PACKAGE)/*.java
 	$(JAVAC) -d . $(SRC_DIR)/$(PACKAGE)/*.java
 
 run: $(PACKAGE)
-	java $(MAIN_CLASS)
+	java $(MAIN_CLASS) $(ARGS)
 
 clean:
 	rm -rf $(PACKAGE)/*.class
