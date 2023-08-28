@@ -35,21 +35,14 @@ public class PeopleCounter {
 	}
 	
 	//someone arrived outside
-	public void personArrived() {
+	synchronized public void personArrived() {
 		peopleOutSide.getAndIncrement();
 	}
 	
 	//someone got inside
 	synchronized public void personEntered() {
-		//peopleOutSide.getAndDecrement();
-		//peopleInside.getAndIncrement();
-		//if (overCapacity()==true){
-			
-		//}
-		//else{
 		peopleOutSide.getAndDecrement();
 		peopleInside.getAndIncrement();
-		//}
 	}
 
 	//someone left
@@ -60,6 +53,7 @@ public class PeopleCounter {
 	}
 	//too many people inside
 	synchronized public boolean overCapacity() {
+		
 		if(peopleInside.get()>=maxPeople.get())
 			return true;
 		return false;
